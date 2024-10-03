@@ -146,10 +146,6 @@ public class OpenFilePlugin implements MethodCallHandler
     }
 
     private boolean pathRequiresPermission() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            return false;
-        }
-
         try {
             String appDirCanonicalPath = new File(context.getApplicationInfo().dataDir).getCanonicalPath();
             String fileCanonicalPath = new File(filePath).getCanonicalPath();
